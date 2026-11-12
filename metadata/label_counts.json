@@ -1,0 +1,49 @@
+{
+  "version": "V5",
+  "run_status": "complete",
+  "result_directory": "/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112",
+  "datasets": {
+    "agentsafetybench": {
+      "record_count": 2000,
+      "classified_count": 2000,
+      "empty_label_count": 0,
+      "label_counts": {
+        "V1": 459,
+        "V2": 187,
+        "V3": 703,
+        "H2": 329,
+        "H1": 343,
+        "H3": 95,
+        "V4": 13,
+        "H4": 108
+      },
+      "result_sha256": "ea2c43374dc34f9a3a8a069cf4eecafd801d6ea9f712dece2b0dda2896c6738b",
+      "api_attempts": 2891,
+      "successful_attempts": 2000,
+      "successful_models": {
+        "claude-opus-5-5": 1741,
+        "gpt-6.1-sol": 259
+      }
+    },
+    "toolemu": {
+      "record_count": 144,
+      "classified_count": 144,
+      "empty_label_count": 0,
+      "label_counts": {
+        "V3": 96,
+        "H1": 44,
+        "H3": 1,
+        "V1": 1,
+        "V2": 2,
+        "H2": 1
+      },
+      "result_sha256": "e719e35434e7ba140207be35b47b3794bb1c95a18c47e8f4192447ecefe8ce82",
+      "api_attempts": 144,
+      "successful_attempts": 144,
+      "successful_models": {
+        "claude-opus-5-5": 144
+      }
+    }
+  },
+  "v3_target_note": "Agent-SafetyBench V3 count is 703, below the desired 800–900 range; this reflects the stricter V5 rules and is not adjusted artificially."
+}

@@ -1,0 +1,67 @@
+{
+  "version": "v5-strict-nonempty-full-rerun-20261112",
+  "status": "complete",
+  "started_at_utc": "2026-11-12T18:09:30.810233+00:00",
+  "finished_at_utc": "2026-11-12T18:53:15.044569+00:00",
+  "classifier_file": "/data/fuyuhan/codes/agent-classify-v5.py",
+  "classifier_sha256": "7ccbb7278cdfc4a72b7354ce7c7d1fea1572352100a2de48f55219e70ad99a29",
+  "system_prompt_sha256": "d2baa91c58b928aec99104a1e07fcc7148c5fbafab36258e3c995950e05e0fc4",
+  "runner_file": "/data/fuyuhan/codes/run_v5_full_rerun.py",
+  "runner_sha256": "c41b9d7c48c45c4e487e4bf5f4d4d627c53b5a32e7ccbe7fd1bffb4f30d690a0",
+  "base_url": "https://router-link.world3.ai/api/v1",
+  "primary_model": "claude-opus-5-5",
+  "fallback_model": "gpt-6.1-sol",
+  "workers": 8,
+  "max_retries": 2,
+  "max_tokens": 600,
+  "temperature_for_gpt": 0.0,
+  "temperature_for_claude": null,
+  "request_interval": 0.5,
+  "max_record_chars": 0,
+  "datasets": {
+    "agentsafetybench": {
+      "source_file": "/data/fuyuhan/agentsafetybench-data/released_data.json",
+      "source_sha256": "59dd0333001ef767766d803e97086ec02af0fbf7ff1f7070b3797863b0dacbe2",
+      "trace_file": "/data/fuyuhan/agent-safetybench-router-results/gpt-4o/gen_res.json",
+      "trace_sha256": "d44f16c9cbf133aea411ee83371abc87d57f79f38cc02668115b46b3a31b05bf",
+      "output_file": "/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112/agentsafetybench_classified.json",
+      "provenance_file": "/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112/agentsafetybench_provenance.json",
+      "record_count": 2000,
+      "classified_count": 2000,
+      "pending_count": 0,
+      "empty_label_count": 0,
+      "failure_mode_counts": {
+        "V1": 459,
+        "V2": 187,
+        "V3": 703,
+        "H2": 329,
+        "H1": 343,
+        "H3": 95,
+        "V4": 13,
+        "H4": 108
+      },
+      "error_ids": []
+    },
+    "toolemu": {
+      "source_file": "/data/fuyuhan/toolemu-data/all_cases.json",
+      "source_sha256": "63f92818dfc2d4c5bf82de3f03d2fe10c166e697235d07c2f55142c8169460b4",
+      "trace_file": null,
+      "trace_sha256": null,
+      "output_file": "/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112/toolemu_classified.json",
+      "provenance_file": "/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112/toolemu_provenance.json",
+      "record_count": 144,
+      "classified_count": 144,
+      "pending_count": 0,
+      "empty_label_count": 0,
+      "failure_mode_counts": {
+        "V3": 96,
+        "H1": 44,
+        "H3": 1,
+        "V1": 1,
+        "V2": 2,
+        "H2": 1
+      },
+      "error_ids": []
+    }
+  }
+}

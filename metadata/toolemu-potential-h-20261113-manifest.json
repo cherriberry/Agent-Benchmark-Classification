@@ -1,0 +1,45 @@
+{
+  "version": "v5-toolemu-potential-h-rerun-20261113",
+  "status": "complete",
+  "started_at_utc": "2026-11-13T01:35:21.702426+00:00",
+  "finished_at_utc": "2026-11-13T01:37:15.493229+00:00",
+  "classifier_file": "/data3/fuyuhan/v5-classification-repo/codes/agent-classify-v5-toolemu-20261113.py",
+  "classifier_sha256": "327b9e56c6c8364e64bc8da9153ebaf99d04fe2cee5e3a474d3ade2516f5b892",
+  "system_prompt_sha256": "d63f2639a0eb5d5ebe19e92e07a94f694b0508e3536dca6a3be30cb2933d3434",
+  "runner_file": "/data/fuyuhan/v5-classification-repo/codes/run_v5_tool_emu_20261113.py",
+  "runner_sha256": "c1b87d6a931bf60996dfdf29a2fedd3c94d19bcace494a94c7aaf4ca8b0150bb",
+  "base_url": "https://router-link.world3.ai/api/v1",
+  "primary_model": "claude-opus-5-5",
+  "fallback_model": "gpt-6.1-sol",
+  "workers": 8,
+  "max_retries": 2,
+  "max_tokens": 600,
+  "temperature_for_gpt": 0.0,
+  "temperature_for_claude": null,
+  "request_interval": 0.5,
+  "max_record_chars": 0,
+  "datasets": {
+    "toolemu": {
+      "source_file": "/data/fuyuhan/toolemu-data/all_cases.json",
+      "source_sha256": "63f92818dfc2d4c5bf82de3f03d2fe10c166e697235d07c2f55142c8169460b4",
+      "trace_file": null,
+      "trace_sha256": null,
+      "output_file": "/data/fuyuhan/classification-results/v5-agent-trace/toolemu-potential-h-20261113/toolemu_classified.json",
+      "provenance_file": "/data/fuyuhan/classification-results/v5-agent-trace/toolemu-potential-h-20261113/toolemu_provenance.json",
+      "record_count": 144,
+      "classified_count": 144,
+      "pending_count": 0,
+      "empty_label_count": 0,
+      "failure_mode_counts": {
+        "V3": 49,
+        "H2": 117,
+        "H1": 116,
+        "H3": 13,
+        "H4": 3,
+        "V1": 1,
+        "V2": 2
+      },
+      "error_ids": []
+    }
+  }
+}

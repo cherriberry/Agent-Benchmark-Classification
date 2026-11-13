@@ -58,3 +58,15 @@ PYTHONPATH=/data/fuyuhan/mirage-bench-agent/.deps \
   --workers 8 --max-retries 2 --request-interval 0.5 \
   --flush-every 10 --max-tokens 600 --max-record-chars 0
 ```
+
+### Completed ToolEmu rerun
+
+The ToolEmu-only rerun completed on 2026-11-13:
+
+- 144/144 records classified;
+- 0 empty label arrays;
+- all 144 records classified by `claude-opus-5-5` on the first attempt;
+- output: `/data/fuyuhan/classification-results/v5-agent-trace/toolemu-potential-h-20261113/toolemu_classified.json`;
+- manifest: `metadata/toolemu-potential-h-20261113-manifest.json`.
+
+The updated counts are V1=1, V2=2, V3=49, V4=0, H1=116, H2=117, H3=13, H4=3. The H counts are ToolEmu metadata-based candidate failure modes under the new rule; because ToolEmu has no Agent execution trace, they must not be interpreted as observed errors by a particular Agent.

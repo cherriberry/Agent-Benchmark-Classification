@@ -27,7 +27,7 @@ DEPS = ROOT / 'mirage-bench-agent/.deps'
 if str(DEPS) not in sys.path:
     sys.path.insert(0, str(DEPS))
 
-CLASSIFIER_PATH = ROOT / 'codes/agent-classify-v5-toolemu-20261113.py'
+CLASSIFIER_PATH = Path(__file__).resolve().parent / 'agent-classify-v5-toolemu-20261113.py'
 AGENT_SOURCE = ROOT / 'agentsafetybench-data/released_data.json'
 AGENT_TRACE = ROOT / 'agent-safetybench-router-results/gpt-4o/gen_res.json'
 TOOL_SOURCE = ROOT / 'toolemu-data/all_cases.json'

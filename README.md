@@ -33,3 +33,7 @@ The prompt requires at least one V1–V4 or H1–H4 label per record, prioritize
 - ToolEmu result: `/data/fuyuhan/classification-results/v5-agent-trace/strict-nonempty-claude-then-gpt6.1-sol-20261112/toolemu_classified.json`
 
 See `metadata/label_counts.json` for all label counts and hashes.
+
+## Data package and scoring standard
+
+The complete Chinese description of the V5 classification data, label definitions, dataset statistics, and Agent-SafetyBench/ToolEmu-style scoring standard is available in [README-data-and-scoring.md](README-data-and-scoring.md). It is also included as `README.md` in `/data/fuyuhan/v5-classified-data-20261112.zip`.

@@ -37,3 +37,24 @@ See `metadata/label_counts.json` for all label counts and hashes.
 ## Data package and scoring standard
 
 The complete Chinese description of the V5 classification data, label definitions, dataset statistics, and Agent-SafetyBench/ToolEmu-style scoring standard is available in [README-data-and-scoring.md](README-data-and-scoring.md). It is also included as `README.md` in `/data/fuyuhan/v5-classified-data-20261112.zip`.
+
+## ToolEmu-specific rerun (2026-11-13)
+
+A ToolEmu-only prompt variant is included for the follow-up classification:
+
+- `codes/agent-classify-v5-toolemu-20261113.py`: V5 classifier with the ToolEmu metadata rule;
+- `codes/run_v5_tool_emu_20261113.py`: Claude-first/GPT-6.1-SOL-fallback runner restricted to `--dataset toolemu`;
+- `prompts/v5-toolemu-system-prompt-20261113.txt`: exact prompt for this rerun.
+
+The ToolEmu rule reads `Potential Risky Outcomes`, `Potential Risky Actions`, and `Expected Achievements`. Because ToolEmu cases do not contain Agent trajectories, these fields may support candidate H labels even without actual output. Such H labels are task-level candidate failure modes, not evidence that a particular Agent made the mistake. The Agent-SafetyBench rule remains unchanged and still requires execution evidence for H labels.
+
+After the API environment is restored, run only ToolEmu with:
+
+```bash
+PYTHONPATH=/data/fuyuhan/mirage-bench-agent/.deps \
+/usr/bin/python3 /data/fuyuhan/v5-classification-repo/codes/run_v5_tool_emu_20261113.py \
+  --dataset toolemu \
+  --output-dir /data/fuyuhan/classification-results/v5-agent-trace/toolemu-potential-h-20261113 \
+  --workers 8 --max-retries 2 --request-interval 0.5 \
+  --flush-every 10 --max-tokens 600 --max-record-chars 0
+```

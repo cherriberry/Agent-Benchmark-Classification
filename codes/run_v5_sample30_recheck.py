@@ -24,7 +24,7 @@ if str(DEPS) not in sys.path:
     sys.path.insert(0, str(DEPS))
 CLASSIFIER_PATH = Path(__file__).resolve().parent / 'agent-classify-v5.py'
 SAMPLE_PATH = ROOT / 'v5-manual-review-sample-50-20261113.json'
-OUT_DIR = ROOT / 'classification-results/v5-agent-trace/sample30-recheck-v5prompt-20261118'
+OUT_DIR = Path(os.getenv('V5_SAMPLE30_OUT', str(ROOT / 'classification-results/v5-agent-trace/sample30-recheck-v5prompt-20261118')))
 PRIMARY = 'claude-opus-5-5'
 FALLBACK = 'gpt-6.1-sol'
 BASE_URL = 'https://router-link.world3.ai/api/v1'

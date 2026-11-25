@@ -1,0 +1,8 @@
+{
+  "source_task": "/data3/fuyuhan/my-harbor",
+  "instruction_sha256": "0128e4512c5ec7069526e7bcedaf27fb31755373122af1fac93b3956e9841701",
+  "prompt_modified": false,
+  "pages": 4,
+  "input_files": 9,
+  "risk_labels_in_tool_results": true
+}

@@ -1,0 +1,75 @@
+{
+  "version": "v5-r8-full-20261119",
+  "status": "complete",
+  "started_at_utc": "2026-11-19T16:45:13.509749+00:00",
+  "finished_at_utc": "2026-11-19T17:39:00.094797+00:00",
+  "classifier_file": "/data3/fuyuhan/v5-classification-repo/codes/agent-classify-v5.py",
+  "classifier_sha256": "bd4871d7fc345216364110e2fb89309396c2eddfb253f4eb2e212fece43e00d7",
+  "system_prompt_sha256": "58a2183cf258b8a53224efc86bbf806671b1b476d7120f7c34eb83e3766e9536",
+  "runner_file": "/data/fuyuhan/v5-classification-repo/codes/run_v5_full_rerun.py",
+  "runner_sha256": "c3fd220a0da3af4efe873c56c2e0ab38697f44507ca24e57b0e8cc2e532f4b07",
+  "base_url": "https://router-link.world3.ai/api/v1",
+  "primary_model": "claude-opus-5-5",
+  "fallback_model": "gpt-6.1-sol",
+  "workers": 8,
+  "max_retries": 2,
+  "max_tokens": 600,
+  "temperature_for_gpt": 0.0,
+  "temperature_for_claude": null,
+  "request_interval": 0.45,
+  "max_record_chars": 0,
+  "datasets": {
+    "agentsafetybench": {
+      "source_file": "/data/fuyuhan/agentsafetybench-data/released_data.json",
+      "source_sha256": "59dd0333001ef767766d803e97086ec02af0fbf7ff1f7070b3797863b0dacbe2",
+      "trace_file": "/data/fuyuhan/agent-safetybench-router-results/gpt-4o/gen_res.json",
+      "trace_sha256": "d44f16c9cbf133aea411ee83371abc87d57f79f38cc02668115b46b3a31b05bf",
+      "output_file": "/data/fuyuhan/classification-results/v5-agent-trace/full-r8-20261119/agentsafetybench_classified.json",
+      "provenance_file": "/data/fuyuhan/classification-results/v5-agent-trace/full-r8-20261119/agentsafetybench_provenance.json",
+      "record_count": 2000,
+      "classified_count": 2000,
+      "pending_count": 0,
+      "empty_label_count": 0,
+      "failure_mode_counts": {
+        "V1": 517,
+        "H2": 579,
+        "V2": 327,
+        "H4": 845,
+        "V3": 708,
+        "H1": 598,
+        "H3": 50,
+        "V4": 67
+      },
+      "error_ids": [],
+      "classification_model_counts": {
+        "claude-opus-5-5": 1704,
+        "gpt-6.1-sol": 296
+      }
+    },
+    "toolemu": {
+      "source_file": "/data/fuyuhan/toolemu-data/all_cases.json",
+      "source_sha256": "63f92818dfc2d4c5bf82de3f03d2fe10c166e697235d07c2f55142c8169460b4",
+      "trace_file": null,
+      "trace_sha256": null,
+      "output_file": "/data/fuyuhan/classification-results/v5-agent-trace/full-r8-20261119/toolemu_classified.json",
+      "provenance_file": "/data/fuyuhan/classification-results/v5-agent-trace/full-r8-20261119/toolemu_provenance.json",
+      "record_count": 144,
+      "classified_count": 144,
+      "pending_count": 0,
+      "empty_label_count": 0,
+      "failure_mode_counts": {
+        "V3": 118,
+        "H1": 137,
+        "H2": 143,
+        "H3": 3,
+        "V1": 1,
+        "V2": 1
+      },
+      "error_ids": [],
+      "classification_model_counts": {
+        "claude-opus-5-5": 144
+      }
+    }
+  },
+  "prompt_revision": "r8"
+}

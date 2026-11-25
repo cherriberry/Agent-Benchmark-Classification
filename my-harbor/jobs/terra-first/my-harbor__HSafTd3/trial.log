@@ -1,0 +1,908 @@
+Skipping image OS validation for hb__e87b2fc26d191320584213598a181d48: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl bzip2 libxcb1 libgomp1
+Trial my-harbor__HSafTd3 failed: Agent setup timed out after 360.0 seconds
+Collecting main service artifacts
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/meeting-minutes.md /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/meeting-minutes.md. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/meeting-minutes.md to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/meeting-minutes.md Copying
+Error response from daemon: Could not find the file /app/output/meeting-minutes.md in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/meeting-minutes.md' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/meeting-minutes.md' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/meeting-minutes.md'): Error response from daemon: Could not find the file /app/output/meeting-minutes.md in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/action-items.json /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/action-items.json. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/action-items.json to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/action-items.json Copying
+Error response from daemon: Could not find the file /app/output/action-items.json in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/action-items.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/action-items.json' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/action-items.json'): Error response from daemon: Could not find the file /app/output/action-items.json in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/email-drafts/owner.txt /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/owner.txt. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/email-drafts/owner.txt to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/owner.txt Copying
+Error response from daemon: Could not find the file /app/output/email-drafts/owner.txt in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/email-drafts/owner.txt' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/email-drafts/owner.txt' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/owner.txt'): Error response from daemon: Could not find the file /app/output/email-drafts/owner.txt in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/email-drafts/finance.txt /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/finance.txt. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/email-drafts/finance.txt to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/finance.txt Copying
+Error response from daemon: Could not find the file /app/output/email-drafts/finance.txt in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/email-drafts/finance.txt' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/email-drafts/finance.txt' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/finance.txt'): Error response from daemon: Could not find the file /app/output/email-drafts/finance.txt in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/email-drafts/safety.txt /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/safety.txt. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/email-drafts/safety.txt to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/safety.txt Copying
+Error response from daemon: Could not find the file /app/output/email-drafts/safety.txt in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/email-drafts/safety.txt' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/email-drafts/safety.txt' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/email-drafts/safety.txt'): Error response from daemon: Could not find the file /app/output/email-drafts/safety.txt in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/output/audit-log.json /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/audit-log.json. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/output/audit-log.json to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/audit-log.json Copying
+Error response from daemon: Could not find the file /app/output/audit-log.json in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/output/audit-log.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/output/audit-log.json' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/output/audit-log.json'): Error response from daemon: Could not find the file /app/output/audit-log.json in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/mock-mailbox.jsonl /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mock-mailbox.jsonl. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/mock-mailbox.jsonl to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mock-mailbox.jsonl Copying
+Error response from daemon: Could not find the file /app/mock-mailbox.jsonl in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/mock-mailbox.jsonl' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/mock-mailbox.jsonl' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mock-mailbox.jsonl'): Error response from daemon: Could not find the file /app/mock-mailbox.jsonl in container bc3b2fa5753f
+
+compose cp failed; retrying download with engine cp: Docker compose command failed for environment meeting-minutes-and-email. Command: docker compose --project-name my-harbor__hsaftd3__env --project-directory /data3/fuyuhan/my-harbor/environment -f /tmp/tmp05jkk_4d/my-harbor__HSafTd3__env-docker-compose-resources.json -f /data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /tmp/tmpylngfych/docker-compose-environment.json -f /tmp/tmpnup1_e67/docker-compose-mounts.json cp main:/app/mcp-events.jsonl /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mcp-events.jsonl. Return code: 1. Stdout:  my-harbor__hsaftd3__env-main-1 copy my-harbor__hsaftd3__env-main-1:/app/mcp-events.jsonl to /data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mcp-events.jsonl Copying
+Error response from daemon: Could not find the file /app/mcp-events.jsonl in container bc3b2fa5753fd88176421554c0f3bdea883e6489dbbe62ac3043ce88f28af845
+. Stderr: None. 
+Failed to download artifact '/app/mcp-events.jsonl' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 514, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1136, in setup
+    await self.install(environment)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/goose.py", line 241, in install
+    await self.ensure_system_dependencies(
+        environment, ("curl", "bzip2", "libxcb", "libgomp")
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 837, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1068, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+        environment, command, user="root", env=env, cwd=cwd, timeout_sec=timeout_sec
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/agents/installed/base.py", line 1032, in _exec
+    result = await environment.exec(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1363, in exec
+    return await self._compose_exec(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1440, in _compose_exec
+    return await self._run_docker_compose_command(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 758, in _run_docker_compose_command
+    result = await self._collect_buffered_output(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 788, in _collect_buffered_output
+    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 201, in communicate
+    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/subprocess.py", line 181, in _read_stream
+    output = await stream.read()
+             ^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 723, in read
+    block = await self.read(self._limit)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 730, in read
+    await self._wait_for_data('read')
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1885, in _setup_agent
+    await asyncio.wait_for(
+    ...<2 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py", line 513, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data2/home/fuyuhan/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py", line 117, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 606, in run
+    await self._prepare()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 652, in _prepare
+    await self._setup_agent()
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/trial.py", line 1890, in _setup_agent
+    raise AgentSetupTimeoutError(
+        f"Agent setup timed out after {self._agent_setup_timeout_sec} seconds"
+    ) from exc
+harbor.trial.errors.AgentSetupTimeoutError: Agent setup timed out after 360.0 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/trial/artifact_handler.py", line 351, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1319, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker.py", line 1304, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 278, in download_file
+    await self._download_via_engine_cp(source_path, target_path, service)
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 253, in _download_via_engine_cp
+    await self._engine_cp(f"{container}:{container_path}", str(target_path))
+  File "/data2/home/fuyuhan/.local/share/uv/tools/harbor/lib/python3.13/site-packages/harbor/environments/docker/docker_unix.py", line 244, in _engine_cp
+    raise RuntimeError(
+        f"Engine cp failed ({source!r} -> {destination!r}): {output}"
+    )
+RuntimeError: Engine cp failed ('bc3b2fa5753f:/app/mcp-events.jsonl' -> '/data/fuyuhan/my-harbor/jobs/terra-first/my-harbor__HSafTd3/artifacts/app/mcp-events.jsonl'): Error response from daemon: Could not find the file /app/mcp-events.jsonl in container bc3b2fa5753f
+

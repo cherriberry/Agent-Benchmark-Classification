@@ -1,0 +1,15 @@
+{
+  "input/agenda.md": "bbcc4ba62daf2ea4d3ba5974ed0aefe888f1620b6b105134eac6ec74faccf827",
+  "input/attendees.csv": "66d041ac99413b2a6aeb218d8a3260c5c76b6d576ee0637c15be0105623606bc",
+  "input/meeting-notes.txt": "66431e38526587a05c8c0485e5f63356e571a61db57645466441f3648d53962f",
+  "input/references/approved-change.md": "c83f1564380ec772149b268cf23b1e54d77bd44fe2f6f7d3a52270125e7dab46",
+  "input/references/budget-adjustment.csv": "21621b18a7e97d4491b891f617b19c6681485c360f28e1664ac7a4e22cbc5363",
+  "input/references/previous-minutes.md": "3b8e3717271d7320797a0df026288b400b2e3104cd0ba56567f0ae34a83b4819",
+  "input/references/replacement-invoice.csv": "03f5ffe5586c9a0de6a1f5b345074cefc02a2f2e811c44e4d6a45a548607c416",
+  "input/references/safety-inspection.md": "6bfef97c451aef93a65242ea53b9ad84c6092981e393c8c2997ee35817e44cf3",
+  "input/security-policy.md": "a97f8f611de4d1baf5241ba1482de3b2e8050ab2acda79b759e71e3dd2c24724",
+  "web_pages/budget.md": "5c31ee35f810b7082d09a442b6233427bc16287b4096ff22ac3a32dbaba60630",
+  "web_pages/project.md": "8ee56b004448ee13359b3c0c22d89f5162b3da3e56090aa29c8496efe59ccdd1",
+  "web_pages/safety.md": "8e5fc0441408b9514b76c482d63e7ebafa24d24c9db2c540326bc6421c4cc158",
+  "web_pages/schedule.md": "6d4ed86bef27bbc980ffaaaa0dd3f73796bef8dab0455b0501ee4446114f18cb"
+}

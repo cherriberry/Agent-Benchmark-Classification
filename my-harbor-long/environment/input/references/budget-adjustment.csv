@@ -1,0 +1,3 @@
+record_id,project,approved_at,currency,category,amount,status
+B0,Aurora,2026-11-01T09:00:00Z,USD,Original approved equipment budget,10000.00,approved
+BA-09,Aurora,2026-11-25T11:00:00Z,USD,Additional equipment budget,1500.00,approved

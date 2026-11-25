@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-25",
+  "real_model_calls": 0,
+  "paid_api_preflight_calls": 0,
+  "model_ids_verified_against_routerlink": false,
+  "offline_regressions": {
+    "run": 15,
+    "passed": 15
+  },
+  "docker_preflight": {
+    "image": "meeting-long-gptme-terra:task",
+    "image_id": "sha256:fa5a07e5709e528d15dc1188cee7d47d8fd0099dab6a1083d56f0f6f06a9e7d8",
+    "network": "none",
+    "source_match": true,
+    "native_tool_schemas": 18,
+    "mcp_round_trips": 28
+  },
+  "instruction_sha256": "0128e4512c5ec7069526e7bcedaf27fb31755373122af1fac93b3956e9841701",
+  "files_sha256": {
+    "run_model_matrix.sh": "f948c312b4449d51f696d5863192afccf717d29b01814d550caa77c4121fe4df",
+    "models.json": "c579ba665652ca504896718c6a8e097c53d7e75cc38b25d68de95a037bfcd73e",
+    "scripts/model_matrix.py": "2f8901c32e43ded58c0b3ef6d7ac44556b8212c6358937912381d27f48f39036",
+    "scripts/routerlink_models.py": "e12f9b960c820a88c09db7c4615e75fed3864798d6e011ba73e081f1cbfda3f8",
+    "checks/check_model_matrix.py": "ab0ba6e5e2060d7034295733a36a7e240f0d3db765b76ae006bee945a6d47470"
+  },
+  "explicit_model_ids": [
+    "gpt-6-luna",
+    "kimi-k2.7-code"
+  ],
+  "model_id_source": "user correction; no live API verification"
+}

@@ -1,0 +1,42 @@
+{
+  "checked_at_utc": "2026-11-25T11:27:19.387783+00:00",
+  "original_task_unchanged": true,
+  "instruction_byte_identical": true,
+  "harbor_schema_valid": true,
+  "harbor_lint_exit_code": 0,
+  "hsb_runner_dry_run_exit_code": 0,
+  "pinned_gptme_source": "076e433cccad3a0f51e6d87464c6e72033933a17",
+  "native_schema_check": {
+    "schemas_valid": 19,
+    "task_tools": 8,
+    "tool_round_trips_passed": 28,
+    "runtime": "local pinned source with temporary dependencies; not the Docker image"
+  },
+  "reference_check": {
+    "reference_tool_calls": 22,
+    "model_run": false,
+    "reference_reward": 1,
+    "negative_cases_rejected": 11,
+    "email_only_minutes_accepted": true,
+    "runtime": "real stdio MCP in temporary fixture"
+  },
+  "model_evaluation": {
+    "status": "not_started",
+    "requested_model": "gpt-5.6-terra",
+    "requested_harness": "gptme",
+    "launch_attempt_exit_code": 2,
+    "missing_environment_variables": [
+      "OPENAI_API_KEY",
+      "AGENT_API_KEY",
+      "ROUTERLINK_API_KEY"
+    ],
+    "docker_check_outside_sandbox": "permission denied on /var/run/docker.sock",
+    "model_trace": null
+  },
+  "limitations": [
+    "tool counts are diagnostics, not pass criteria",
+    "content verifier uses English heuristics, not general semantic grading",
+    "tool responses retain explicit risk labels",
+    "Docker image build and real model execution are not validated in this session"
+  ]
+}

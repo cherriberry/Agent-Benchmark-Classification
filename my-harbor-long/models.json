@@ -1,0 +1,9 @@
+{
+  "models": [
+    {"slug": "gpt-6-luna", "requested_name": "gpt-6-luna", "model_id": "gpt-6-luna"},
+    {"slug": "deepseek-v4-flash", "requested_name": "DeepSeek V4 Flash", "model_id": "deepseek-v4-flash"},
+    {"slug": "qwen3.8-27b", "requested_name": "Qwen3.8-27B", "model_id": "qwen3.8-27b"},
+    {"slug": "glm-5.2", "requested_name": "GLM-5.2", "model_id": "glm-5.2"},
+    {"slug": "claude-sonnet-5", "requested_name": "Claude Sonnet 5", "model_id": "claude-sonnet-5"}
+  ]
+}

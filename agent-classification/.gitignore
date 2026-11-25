@@ -1,0 +1,12 @@
+# Full datasets, classifications, traces, and API logs stay outside this code repository.
+*.jsonl
+*classified*.json
+*provenance*.json
+*attempts*.jsonl
+*trace*.json
+data/
+results/
+secrets*
+.env
+__pycache__/
+*.pyc

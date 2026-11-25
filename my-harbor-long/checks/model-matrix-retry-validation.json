@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-25",
+  "real_model_calls": 0,
+  "online_retry_performed": false,
+  "regressions": {
+    "run": 20,
+    "passed": 20
+  },
+  "runtime_setup_shell_syntax": "passed",
+  "offline_gptme_http_capture": {
+    "network": "none",
+    "requests": 6,
+    "gpt6_luna_omits": [
+      "temperature",
+      "top_p"
+    ],
+    "other_models_unchanged": true,
+    "probe_sampling_matches_agent": true,
+    "original_transport_sha256": "689b79eecffbb77bd8723da466b5beee352ab490e375058e4f053ae54186794f",
+    "patched_transport_sha256": "09b0a54f05ac57e44aec565ec7fffa5f35a6ed60029d9ac0811b10e45d628170"
+  },
+  "existing_trial_evidence_and_task_fingerprints_preserved": true,
+  "unresolved_external_dependencies": {
+    "qwen3.8-27b": "gateway/upstream credential validity",
+    "kimi-k2.7-code": "organization model access"
+  },
+  "files_sha256": {
+    "scripts/model_matrix.py": "a855297e4d12f3ccf143049128e92e04337750ca841918273b5a00bb1ffea8d1",
+    "scripts/patch_gptme_sampling.py": "3d12efcae50d27f9e2211fb3430e3ed8961fd1b61c4690eda6f334c7348cd67a",
+    "scripts/api_diagnostics.py": "4a05fca20015823959d52875f571619fca777ca3080f3c6bda1482d74768292c",
+    "scripts/check_model_api.py": "8393255011bcbb770ebdc59fd3c565cc436bd492fa10ae3b7ad398131aa5afea",
+    "checks/check_model_matrix.py": "2eb67f24887e533593acfadae2f3222809e2f0c839575ddf3de8a997b796b27e",
+    "checks/check_sampling_transport.py": "55550a67a689ee609f62be639bc05f77779d795b27399728ffb27a1d28d5b182"
+  }
+}

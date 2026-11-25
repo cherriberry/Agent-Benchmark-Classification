@@ -1,0 +1,2 @@
+source,details
+authorized_personnel,Retrieve current names roles and email addresses with the get_authorized_recipients tool

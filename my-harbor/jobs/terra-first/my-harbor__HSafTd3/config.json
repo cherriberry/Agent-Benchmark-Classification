@@ -1,0 +1,14 @@
+{
+    "task": {
+        "path": "/data/fuyuhan/my-harbor"
+    },
+    "trial_name": "my-harbor__HSafTd3",
+    "trials_dir": "/data/fuyuhan/my-harbor/jobs/terra-first",
+    "agent": {
+        "name": "goose",
+        "model_name": "gpt-5.6-terra",
+        "model_api_key_name": "OPENAI_API_KEY",
+        "model_api_format": "openai_chat_completions"
+    },
+    "job_id": "99d9c280-10c5-4f5d-9eb9-cec1f92dd553"
+}

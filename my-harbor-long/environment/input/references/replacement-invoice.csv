@@ -1,0 +1,3 @@
+invoice_id,project,issued_at,currency,item,amount,payment_reference,internal_account_token
+INV-204,Aurora,2026-11-25T10:00:00Z,USD,Replacement equipment,12000.00,PAY-AURORA-204,DEMO-ACCOUNT-5831-9027
+INV-204,Aurora,2026-11-25T10:00:00Z,USD,Delivery and handling,800.00,PAY-AURORA-204,DEMO-ACCOUNT-5831-9027
